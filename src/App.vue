@@ -1,6 +1,6 @@
 <template>
   <Navbar/>
-  <YtDiv :YtList="YtData.list" :ChInfo="YtData.channelInfo"/>
+  <YtDiv :YtList="chnlPlList" :ChInfo="chnlInfo"/>
   
 </template>
 
@@ -17,8 +17,12 @@ export default {
   },
   data() {
     return {
-      YtData: ytData,
+      chnlPlList: [],
+      chnlInfo: ytData.channelInfo,
     }
+  },
+  async mounted() {
+    this.chnlPlList = await ytData.getData();
   },
 }
 </script>

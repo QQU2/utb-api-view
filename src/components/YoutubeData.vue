@@ -17,7 +17,9 @@
         <div class="body flex container p30">
             <div v-for="item in YtList" :key="item.id" class="content-box">
                 <div class="thumbnail">
-                <img :src="item.thumbnail_url" :alt="item.title+' 썸네일 이미지'">
+                    <a :href="`https://www.youtube.com/watch?v=${item.videoId}`">
+                        <img :src="item.thumbnail_url" :alt="item.title+' 썸네일 이미지'">
+                    </a>
                 </div>
                 <div class="explain">
                 <h4>{{ item.title }}</h4>
